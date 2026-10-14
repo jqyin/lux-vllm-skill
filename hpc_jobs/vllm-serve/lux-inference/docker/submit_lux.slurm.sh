@@ -210,5 +210,5 @@ stdbuf -oL srun \
     --gres=gpu:"${GPUSPERNODE}" \
     --export=ALL \
     --kill-on-bad-exit=1 \
-    ./lux_container_launcher.sh "${MODELPATH}" "${DATASETSPATH}" \
+    bash ./lux_container_launcher.sh "${MODELPATH}" "${DATASETSPATH}" \
     2>&1 | grep --line-buffered -v "${WARNING_STRING}"

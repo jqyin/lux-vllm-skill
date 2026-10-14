@@ -39,5 +39,5 @@ export ZENITH_IMAGE_REF="${ZENITH_IMAGE_REF:-localhost/inference_image_gfx950:${
 export ZENITH_NCCL_DEBUG="${ZENITH_NCCL_DEBUG:-INFO}"
 export ZENITH_CONTAINER_EXTRA_ENV="${ZENITH_CONTAINER_EXTRA_ENV:-NCCL_DEBUG=INFO NCCL_DEBUG_SUBSYS=INIT,NET}"
 # (the launcher sources lux_podman_env.sh itself)
-exec stdbuf -oL ./lux_container_launcher.sh "${ZENITH_MODELPATH:-${HOME}/hfmodels}" \
+exec stdbuf -oL bash ./lux_container_launcher.sh "${ZENITH_MODELPATH:-${HOME}/hfmodels}" \
      "${ZENITH_DATASETSPATH:-${HOME}/datasets}" 2>&1 | grep --line-buffered -v PlacementGroupCleaner
